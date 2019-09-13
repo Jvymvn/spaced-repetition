@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import WordList from '../../components/WordList/WordList';
 
 class DashboardRoute extends Component {
