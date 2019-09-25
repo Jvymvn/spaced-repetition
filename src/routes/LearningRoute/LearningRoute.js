@@ -57,8 +57,8 @@ class LearningRoute extends Component {
             </form>
           </section>
           : <GuessFeedback />)}
-        <div>
-          <p>Your total score is: {this.context.totalScore}</p>
+        <div className='DisplayScore'>
+          <p className="DisplayScore">Your total score is: {this.context.totalScore}</p>
         </div>
         <p>You have answered this word correctly {this.context.wordCorrectCount} times.</p>
         <p>You have answered this word incorrectly {this.context.wordIncorrectCount} times.</p>

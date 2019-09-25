@@ -10,9 +10,9 @@ export default class GuessFeedback extends Component {
 
     renderFeedback = () => {
         if (this.context.isCorrect) {
-            return <h2>You were correct!</h2>
+            return <h2>You were correct! :D</h2>
         } else {
-            return <h2>Good try, but incorrect.</h2>
+            return <h2>Good try, but not quite right :(</h2>
         }
     }
 
@@ -21,8 +21,11 @@ export default class GuessFeedback extends Component {
             <section id="feedback">
                 <div className="GuessFeedback">
                     {this.renderFeedback()}
-                    <p>The correct translation for <span en="fr">{this.context.prevWord}</span> was {this.context.answer} and you chose{this.context.guess}</p>
-                    <button onClick={this.handleClick}>Next word</button>
+                    {/* The correct translation for Testnextword was test-answer-from-correct-guess and you chose test-guess-incorrect! */}
+                    <div className="DisplayFeedback">
+                        <p>The correct translation for {this.context.prevWord} was {this.context.answer} and you chose {this.context.guess}!</p>
+                    </div>
+                    <button onClick={this.handleClick}>Try another word!</button>
                 </div>
             </section>
         )
