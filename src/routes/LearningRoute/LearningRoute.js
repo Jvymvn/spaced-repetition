@@ -7,8 +7,14 @@ class LearningRoute extends Component {
 
   static contextType = LearningContext;
 
+  capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+  }
+
   handleSubmit(guess) {
-    LanguageService.submitGuess(guess)
+    let guessFormat = this.capitalize(guess)
+    LanguageService.submitGuess(guessFormat)
       .then(res => {
         this.context.setPrevWord(this.context.nextWord);
         this.context.clearError();
@@ -17,7 +23,7 @@ class LearningRoute extends Component {
         this.context.setWordIncorrectCount(res.wordIncorrectCount);
         this.context.setNextWord(res.nextWord);
         this.context.setAnswer(res.answer);
-        this.context.setGuess(guess);
+        this.context.setGuess(guessFormat);
         this.context.setIsCorrect(res.isCorrect);
         this.context.setIsResultDisplayed(true);
       })

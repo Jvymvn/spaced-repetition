@@ -20,7 +20,7 @@ class Header extends Component {
         <nav>
           <Link
             onClick={this.handleLogoutClick}
-            to='/login'>
+            to='/login' className='btn'>
             Logout
           </Link>
         </nav>
@@ -31,24 +31,27 @@ class Header extends Component {
   renderLoginLink() {
     return (
       <nav>
-        <Link to='/login'>Login</Link>
+        <Link to='/login' className='btn'>Login</Link>
         {' '}
-        <Link to='/register'>Sign up</Link>
+        <Link to='/register' className='btn'>Sign up</Link>
       </nav>
     )
   }
 
   render() {
     return (
-      <header>
-        <h1>
-          <Link to='/'>
-            Spaced repetition
+      <header id="showcase" className="grid">
+        <div className='bg-image'></div>
+        <div className="content-wrap">
+          <h1>
+            <Link to='/' id="link-title">
+              Spaced repetition
           </Link>
-        </h1>
-        {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+          </h1>
+          {TokenService.hasAuthToken()
+            ? this.renderLogoutLink()
+            : this.renderLoginLink()}
+        </div>
       </header>
     );
   }

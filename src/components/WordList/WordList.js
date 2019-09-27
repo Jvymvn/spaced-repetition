@@ -28,7 +28,7 @@ class WordList extends Component {
             <div className="wordlist">
                 <h2>Start Practicing {this.context.language.name}</h2>
                 <h2>Total correct answers: {this.context.language.total_score}</h2>
-                <a href='/learn'>Start practicing</a>
+                <a href='/learn' className='btn'>Start practicing</a>
                 <h3>Words to practice</h3>
                 {this.renderWordList()}
             </div>
