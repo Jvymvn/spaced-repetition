@@ -40,57 +40,56 @@ class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <section id="section-registration" className="grid">
-        <div className="card">
-          <form
-            onSubmit={this.handleSubmit}
-          >
-            <div class ></div>
-            <div role='alert'>
-              {error && <p>{error}</p>}
-            </div>
-            <div>
-              <Label htmlFor='registration-name-input'>
-                Enter your name<Required />
-              </Label>
-              <Input
-                ref={this.firstInput}
-                id='registration-name-input'
-                name='name'
-                required
-              />
-            </div>
-            <div>
-              <Label htmlFor='registration-username-input'>
-                Choose a username<Required />
-              </Label>
-              <Input
-                id='registration-username-input'
-                name='username'
-                required
-              />
-            </div>
-            <div>
-              <Label htmlFor='registration-password-input'>
-                Choose a password<Required />
-              </Label>
-              <Input
-                id='registration-password-input'
-                name='password'
-                type='password'
-                required
-              />
-            </div>
-            <footer>
-              <Button type='submit'>
-                Sign up
-          </Button>
-              {' '}
-              <Link to='/login'>Already have an account?</Link>
-            </footer>
-          </form>
+
+      <form
+        onSubmit={this.handleSubmit}
+        id="regform"
+      >
+        <p>Practice learning a language with the spaced reptition revision technique.</p>
+        <h2>Sign up</h2>
+        <div role='alert'>
+          {error && <p>{error}</p>}
         </div>
-      </section>
+        <div>
+          <Label htmlFor='registration-name-input'>
+            Enter your name<Required />
+          </Label>
+          <Input
+            ref={this.firstInput}
+            id='registration-name-input'
+            name='name'
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor='registration-username-input'>
+            Choose a username<Required />
+          </Label>
+          <Input
+            id='registration-username-input'
+            name='username'
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor='registration-password-input'>
+            Choose a password<Required />
+          </Label>
+          <Input
+            id='registration-password-input'
+            name='password'
+            type='password'
+            required
+          />
+        </div>
+        <div>
+          <Button type='submit' className="btn">
+            Sign up
+          </Button>
+          <br />
+          <Link to='/login'>Already have an account?</Link>
+        </div>
+      </form>
     )
   }
 }

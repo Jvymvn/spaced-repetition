@@ -1,4 +1,11 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
 body{
+    height: 100%;
+    overflow: auto;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #333;
@@ -21,7 +28,7 @@ img{
 
 
 p{
-    margin: 0;
+    margin: 1px;
     padding: 1em 0;
 }
 
@@ -33,13 +40,15 @@ p{
     text-decoration: none;
     padding: 1em 2em;
     border: 1px solif #666;
+    border-radius: 10px;
 }
 
 
 
 .btn:hover {
-    background: #eaeaea;
+    background: oldlace;
     color: #333;
+    border: .5px solid #000;
 }
 
 
@@ -73,20 +82,13 @@ p{
 
 /* Registration form */
 
-#registration-sec{
+#section-registration{
     background: #eaeaea;
     color: #333;
     padding-bottom: 7em;
 }
 
-#link-title{
-    text-decoration: none;
-    color: #eaeaea;
-}
 
-#link-title:hover{
-    text-decoration: underline;
-}
 
 .login-labels{
     display: inline-block;

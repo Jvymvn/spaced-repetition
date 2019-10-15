@@ -1,0 +1,10 @@
+#section-registration{
+    background: #eaeaea;
+    color: #333;
+    padding-bottom: 7em;
+}
+
+
+form#regform {
+    grid-column: 2/4;
+}

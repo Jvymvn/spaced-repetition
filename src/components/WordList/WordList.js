@@ -17,7 +17,7 @@ class WordList extends Component {
     renderWordList() {
         const words = this.context.words.map((word, i) => <li key={i}><Word word={word} /></li>)
         return (
-            <ul>
+            <ul className="wordlist">
                 {words}
             </ul>
         )
@@ -25,11 +25,7 @@ class WordList extends Component {
 
     render() {
         return (
-            <div className="wordlist">
-                <h2>Start Practicing {this.context.language.name}</h2>
-                <h2>Total correct answers: {this.context.language.total_score}</h2>
-                <a href='/learn' className='btn'>Start practicing</a>
-                <h3>Words to practice</h3>
+            <div>
                 {this.renderWordList()}
             </div>
         )

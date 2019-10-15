@@ -1,0 +1,19 @@
+#section-login{
+    background: #eaeaea;
+    color: #333;
+    padding-bottom: 50%;
+    
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    text-align: center;
+  }
+
+  form#loginform {
+    grid-column: 2/4;
+}

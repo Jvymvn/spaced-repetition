@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LanguageService from '../../services/language-service';
 import LearningContext from '../../contexts/LearningContext';
 import GuessFeedback from '../../components/GuessFeedback/GuessFeedback';
+import "./LearningRoute.css"
 
 class LearningRoute extends Component {
 
@@ -49,17 +50,23 @@ class LearningRoute extends Component {
     return (
       <section id="learning-container">
         {(!this.context.isResultDisplayed
-          ? <section role="form">
+          ? <section role="form" >
             <div>
-              <h2>Translate the word:</h2><span>{this.context.nextWord}</span>
+              <h2>Translate the word:</h2><h3>{this.context.nextWord}</h3>
             </div>
             <form onSubmit={e => {
               e.preventDefault();
               this.handleSubmit(e.target.guessInput.value);
-            }}>
-              <label for="learn-guess-input" >What's the translation for this word?</label>
-              <input name="guessInput" type="text" id='learn-guess-input' className='guessInput' required required></input>
-              <button type="submit">Submit your answer</button>
+            }} id="guessform">
+              <div class="row">
+                <div class="col-25">
+                  <label for="learn-guess-input" >What's the translation for this word?</label><br />
+                </div>
+                <div class="col-75">
+                  <input name="guessInput" type="text" id='learn-guess-input' className='guessInput' required required></input>
+                </div>
+                <input type="submit" value="Submit your answer"></input>
+              </div>
             </form>
           </section>
           : <GuessFeedback />)}
